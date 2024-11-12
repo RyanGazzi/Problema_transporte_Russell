@@ -9,7 +9,7 @@ import numpy as np
 
 #Criando um df de saída
 out = pd.DataFrame(columns= ["CDs", "Clientes", "Quant"])
-out2 = pd.DataFrame(columns= ["CDs", "Clientes", "Quant"])
+
 #Inputs dados
 df_demanda = pd.read_excel("Demanda.xlsx")
 df_distancia = pd.read_excel("Distancia.xlsx")
