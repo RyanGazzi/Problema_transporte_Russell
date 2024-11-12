@@ -16,6 +16,12 @@ df_distancia = pd.read_excel("Distancia.xlsx")
 df_estoque = pd.read_excel("Estoque.xlsx")
 df_frete = pd.read_excel("Frete.xlsx")
 
+#Classificando os dfs
+df_demanda = df_demanda.sort_values(by='Cliente')
+df_distancia = df_distancia.sort_values(by= ['Saida', 'Destino'])
+df_estoque = df_estoque.sort_values(by= 'CDs')
+df_frete = df_frete.sort_values(by= 'CDs')
+
 #Calculando o valor de frete para cada cliente
 df_distancia["R$/Km"] = df_distancia["Saida"].apply(lambda x: df_frete["R$/Km"].loc[df_frete["CDs"] == x].values[0])
 df_distancia["Frete"] = df_distancia["Km"] * df_distancia["R$/Km"]
